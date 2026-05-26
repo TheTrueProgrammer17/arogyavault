@@ -85,7 +85,7 @@ Once everything is set up, run the website locally with:
 npm run dev
 ```
 The app will start and typically be available in your browser at `http://localhost:5173/`.
-## 🔐 Security Model
+## 🔐 Security Modelg
 
 1. **Authentication:** Managed entirely by Firebase Auth. Sessions are observed globally.
 2. **Zero-Trust Verification:** Doctors **cannot** browse patient profiles. They only see specific documents explicitly shared via temporary keys. Keys expire automatically and are marked "used" to prevent replay attacks.
