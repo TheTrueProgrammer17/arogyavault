@@ -77,8 +77,4 @@ The app will typically be available at `http://localhost:5173/`.
 
 1. **Authentication:** Managed entirely by Firebase Auth. Sessions are observed globally.
 2. **Zero-Trust Verification:** Doctors **cannot** browse patient profiles. They only see specific documents explicitly shared via temporary keys. Keys expire automatically and are marked "used" to prevent replay attacks.
-3. **Public Emergency Route:** The `/emergency/:userId` route is public but restricts data to strictly necessary fields (blood group, allergies) to prevent severe data leaks while allowing instant first-responder access.
-
-## 📄 Documentation
-
-A comprehensive Technical Documentation and Hackathon Submission guide have been generated as `.docx` files in the project root.
+3. **Public Emergency Route:** The `/emergency/:userId` route is public but restricts data to strictly necessary fields (blood group, allergies) to prevent severe data leaks while allowing instant first-responder access
