@@ -41,23 +41,35 @@ ArogyaVault (Medivault) is a modern, government-grade healthcare document manage
 
 Follow these steps to run ArogyaVault on your local machine.
 
-### Prerequisites
-- Node.js (v18 or higher)
-- A Firebase project
+### Prerequisites (Things to Install)
+Before you begin, ensure you have the following installed on your PC:
+1. **Node.js**: You need Node.js (v18 or higher) to run the application. Download and install it from [nodejs.org](https://nodejs.org/). This will also install `npm` (Node Package Manager).
+2. **Git**: Used to clone the repository. Download it from [git-scm.com](https://git-scm.com/).
+3. **A Firebase Project**: You will need a free Firebase account to handle backend services (database, authentication, storage).
 
-### 1. Clone & Install
+### 1. Set Up Firebase
+1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+2. Enable **Authentication** (Email/Password), **Firestore Database**, and **Storage** in your Firebase project.
+3. Register a Web App in the project settings to get your Firebase configuration keys.
+
+### 2. Clone the Repository
+Open your terminal (Command Prompt, PowerShell, or Terminal) and run:
 ```bash
 git clone https://github.com/your-username/arogyavault.git
 cd arogyavault
+```
+
+### 3. Install Dependencies
+Run the following command to install all the necessary packages for the website:
+```bash
 npm install
 ```
 
-### 2. Environment Variables
-Copy the `.env.example` file and rename it to `.env`. 
-```bash
-cp .env.example .env
-```
-Fill in your Firebase project credentials in the `.env` file:
+### 4. Configure Environment Variables
+You need to provide the app with your Firebase keys.
+1. Copy the `.env.example` file and rename the copy to `.env`. 
+   *(On Windows, you can just copy-paste the file and rename it, or run `copy .env.example .env` in Command Prompt. On Mac/Linux, you can run `cp .env.example .env`)*
+2. Open `.env` in a text editor and fill in your Firebase project credentials:
 ```env
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
@@ -67,12 +79,12 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 ```
 
-### 3. Start Development Server
+### 5. Start the Development Server
+Once everything is set up, run the website locally with:
 ```bash
 npm run dev
 ```
-The app will typically be available at `http://localhost:5173/`.
-
+The app will start and typically be available in your browser at `http://localhost:5173/`.
 ## 🔐 Security Model
 
 1. **Authentication:** Managed entirely by Firebase Auth. Sessions are observed globally.
